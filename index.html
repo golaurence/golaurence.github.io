@@ -61,11 +61,11 @@
   .cico{width:15px;height:15px;margin-right:6px;flex:none;}
 
   /* sections — toprule (thick, full width) + midrule (fine, same width) */
-  .section{border-top:3px solid var(--ink);padding-top:18px;margin-top:30px;}
+  .section{border-top:3px solid var(--ink);padding-top:30px;margin-top:30px;}
   /* Publications: shaded fill spans full page width, content stays aligned */
   .section.pub{border-top:0;background:var(--fill);box-shadow:0 0 0 100vw var(--fill);
     clip-path:inset(0 -100vw);padding:30px 0;margin-top:0;}
-  .pub .section-head{border-top:3px solid var(--ink);padding-top:18px;}
+  .pub .section-head{border-top:3px solid var(--ink);padding-top:30px;}
   .section-head{margin:0 0 18px;}
   .section-head h2{display:flex;align-items:center;font-family:var(--serif);font-weight:600;
     text-transform:uppercase;font-size:clamp(20px,2.8vw,26px);letter-spacing:.05em;margin:0;text-wrap:balance;}
@@ -79,6 +79,7 @@
   .grid-2 .story:nth-child(1),.grid-2 .story:nth-child(2){padding-top:2px;}
   .pub .grid-2 .story:nth-child(even){border-left-color:#dcd7ca;}
   .pub .grid-2 .story:nth-child(n+3){padding-bottom:0;}
+  .grid-2 .story:last-child{padding-bottom:0;}
 
   /* three-column section (works in progress) — vertical dividers only */
   .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;}
@@ -126,6 +127,7 @@
     .grid-2 .story:last-child,.grid-3 .story:last-child{padding-bottom:0 !important;}
     .grid-2 .story:not(:first-child),.grid-3 .story:not(:first-child){border-top:1px solid var(--rule) !important;}
     .nav{font-size:10.5px;}
+    .nameplate{font-size:clamp(18px,6vw,34px);letter-spacing:.16em;text-indent:.16em;white-space:nowrap;}
     .footer .inner{flex-direction:column;align-items:flex-start;gap:14px;}
     .footer .flinks{font-size:11px;gap:14px;flex-wrap:nowrap;}
   }
@@ -168,7 +170,7 @@
         <span class="kicker"><span class="t-lab">Labor</span> <span class="sep">/</span> <span class="t-pol">Politics</span></span>
         <h3><a href="https://academic.oup.com/jeea/advance-article/doi/10.1093/jeea/jvag014/8530555" target="_blank" rel="noopener">Political Interdependence: Evidence from Migrant Turnout in 1,267 Elections Worldwide</a></h3>
         <p class="byline">Journal of the European Economic Association · Forthcoming</p>
-        <p class="dek">Voting in your host country makes you vote back home.</p>
+        <p class="dek">Elections in your host country make you vote back home.</p>
         <details class="abs"><summary><span class="plus"></span> Abstract</summary>
           <p class="body">We document political interdependence driven by international migration. Assembling a novel dataset of migrant turnout in 1,267 elections across 43 origin and 217 destination countries, and using the quasi-random timing of elections between countries, migrant turnout in homeland elections held after a host-country election increases by 7 percentage points. This is consistent with a salience model: exposure to competitive host-country elections raises interest and drives migrants to participate in their homeland elections.</p>
         </details>
@@ -186,16 +188,16 @@
         <span class="kicker"><span class="t-dev">Development</span> <span class="sep">/</span> <span class="t-pol">Politics</span></span>
         <h3><a href="https://doi.org/10.1177/00104140211024292" target="_blank" rel="noopener">When Running for Office Runs in the Family: Horizontal Dynasties, Policy and Development in the Philippines</a></h3>
         <p class="byline">Comparative Political Studies · 2022</p>
-        <p class="dek">When relatives split the offices, spending rises — but development doesn’t.</p>
+        <p class="dek">When relatives hold many offices at once, coordination lifts spending — but not development.</p>
         <details class="abs"><summary><span class="plus"></span> Abstract</summary>
-          <p class="body">We examine horizontal dynasties — families simultaneously holding multiple different offices. Using a regression discontinuity design around close mayoral elections in the Philippines, mayors from horizontal dynasties spend more public resources, driven by weaker institutional checks when relatives occupy neighbouring offices. Despite higher spending, we find no improvements in economic growth or poverty reduction.</p>
+          <p class="body">We examine horizontal dynasties — families simultaneously holding multiple different offices. Using a regression discontinuity design around close mayoral elections in the Philippines, mayors from horizontal dynasties spend more public resources, the result of coordination across the multiple offices their families hold at once. Despite higher spending, we find no improvements in economic growth or poverty reduction.</p>
         </details>
       </article>
       <article class="story">
         <span class="kicker"><span class="t-pol">Politics</span> <span class="sep">/</span> <span class="t-dev">Development</span></span>
         <h3><a href="https://doi.org/10.1016/j.jpubeco.2021.104455" target="_blank" rel="noopener">First Among Equals: The First Place Effect and Political Promotion in Multi-Member Plurality Elections</a></h3>
         <p class="byline">Journal of Public Economics · 2021</p>
-        <p class="dek">Coming first — not merely winning — makes politicians run again.</p>
+        <p class="dek">Coming first — not merely winning — makes politicians seek higher office.</p>
         <details class="abs"><summary><span class="plus"></span> Abstract</summary>
           <p class="body">We study rank-based decision-making in a multi-member plurality electoral system, comparing narrowly-ranked first- and second-placers among Philippine legislative councilors. First-placers are 5–9 percentage points more likely to run for higher office and 1–4 points more likely to win. The effect is specific to placing first and is not explained by party alignment, strategic voting, incumbency resources, or media exposure.</p>
         </details>
@@ -211,7 +213,7 @@
         <span class="kicker"><span class="t-pol">Politics</span> <span class="sep">/</span> <span class="t-lab">Labor</span></span>
         <h3>Absence Makes the Vote Grow Farther: Emigrant Voting Patterns Across 180 Homeland Elections</h3>
         <p class="byline">American Journal of Political Science · Accepted</p>
-        <p class="dek">The greater the political distance, the more emigrants drift from home.</p>
+        <p class="dek">The greater the political distance, the more the emigrant vote diverges from home.</p>
         <details class="abs"><summary><span class="plus"></span> Abstract</summary>
           <p class="body">Do emigrants change their political preferences from afar? Drawing on a novel dataset of emigrant votes by country of residence across 180 homeland elections worldwide, we estimate pairwise fixed-effects regressions and show that political distance — the gap in Polity scores between origin and residence — systematically relates to divergence between the emigrant and homeland vote. The result is largely driven by migrants moving to more democratic countries.</p>
         </details>
