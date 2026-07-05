@@ -39,7 +39,7 @@
   .topline{border-top:1px solid var(--ink);}
   .masthead{text-align:center;padding:26px 0 16px;}
   .nameplate{font-family:var(--display);font-weight:600;text-transform:uppercase;
-    font-size:clamp(40px,7.6vw,78px);line-height:1;letter-spacing:.16em;text-indent:.16em;margin:0;}
+    font-size:clamp(30px,5.8vw,60px);line-height:1;letter-spacing:.3em;text-indent:.3em;margin:0;}
   .nav{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.1em;
     font-size:12px;text-align:center;padding:12px 0;border-top:1px solid var(--ink);border-bottom:3px solid var(--ink);}
   .nav a{color:var(--ink);padding:2px 4px;}
@@ -61,10 +61,11 @@
   .cico{width:15px;height:15px;margin-right:6px;flex:none;}
 
   /* sections — toprule (thick, full width) + midrule (fine, same width) */
-  .section{border-top:3px solid var(--ink);padding-top:18px;margin-top:34px;}
+  .section{border-top:3px solid var(--ink);padding-top:18px;margin-top:30px;}
   /* Publications: shaded fill spans full page width, content stays aligned */
-  .section.pub{background:var(--fill);box-shadow:0 0 0 100vw var(--fill);
-    clip-path:inset(0 -100vw);padding:18px 0 26px;}
+  .section.pub{border-top:0;background:var(--fill);box-shadow:0 0 0 100vw var(--fill);
+    clip-path:inset(0 -100vw);padding:30px 0;margin-top:30px;}
+  .pub .section-head{border-top:3px solid var(--ink);padding-top:18px;}
   .section-head{margin:0 0 18px;}
   .section-head h2{display:flex;align-items:center;font-family:var(--serif);font-weight:600;
     text-transform:uppercase;font-size:clamp(20px,2.8vw,26px);letter-spacing:.05em;margin:0;}
@@ -112,7 +113,7 @@
     justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
   .footer .fname{font-family:var(--display);font-size:24px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;}
   .footer .ftag{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.14em;
-    text-transform:uppercase;color:#a9a79e;margin-top:6px;}
+    text-transform:uppercase;color:#a9a79e;margin-top:2px;}
   .footer a{color:var(--brand);} .footer a:hover{text-decoration:underline;}
   .footer .flinks{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
   .footer .flinks a{margin-left:18px;}
@@ -138,7 +139,7 @@
     <a href="#published">Publications</a><span class="sep">|</span>
     <a href="#working">Working Papers</a><span class="sep">|</span>
     <a href="#wip">Works in Progress</a><span class="sep">|</span>
-    <a href="CV_LG.pdf">CV</a>
+    <a href="CV_LG.pdf" target="_blank" rel="noopener">CV</a>
   </nav>
 
   <!-- HERO -->
@@ -148,10 +149,10 @@
     <p class="bio">Postdoctoral researcher at the <a href="https://www.iae.csic.es/" target="_blank" rel="noopener">Institute for Economic Analysis (IAE-CSIC)</a> and the <a href="https://bse.eu/" target="_blank" rel="noopener">Barcelona School of Economics (BSE)</a> in Barcelona. PhD in Applied Economics from the Wharton School (University of Pennsylvania), MSc in Econometrics and Mathematical Economics from the London School of Economics, and a BS in Business Economics from the University of the Philippines. Previously a consultant at the World Bank.</p>
     <p class="hero-contact">
       <a href="mailto:laurence.go@bse.eu"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" stroke="#1a1a17" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="#1a1a17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>laurence.go@bse.eu</a>
-      <a href="https://twitter.com/golaurencego"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 6.3c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2.1-.8.4-1.6.8-2.5 1a3.9 3.9 0 0 0-6.7 3.5A11 11 0 0 1 3.2 5.1a3.9 3.9 0 0 0 1.2 5.2c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.3 3.5 3.1 3.8-.6.2-1.2.2-1.8.1.5 1.6 2 2.7 3.7 2.7A7.8 7.8 0 0 1 2 18.1a11 11 0 0 0 6 1.8c7.2 0 11.1-6 11.1-11.1v-.5c.8-.6 1.4-1.3 1.9-2z" fill="#1a1a17"/></svg>@golaurencego</a>
-      <a href="https://bsky.app/profile/laurence.go"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 10.8C10.4 7.7 6.6 5.1 5 5.6c-1.4.5-.9 3.4-.4 5 .4 1.2 1.6 1.9 2.9 2-.9.2-1.9.5-1.6 1.9.3 1.3 2.5 2.6 4.1.9.8-.9 1-1.8 1-2.3 0 .5.2 1.4 1 2.3 1.6 1.7 3.8.4 4.1-.9.3-1.4-.7-1.7-1.6-1.9 1.3-.1 2.5-.8 2.9-2 .5-1.6 1-4.5-.4-5-1.6-.5-5.4 2.1-7 5.2z" fill="#1a1a17"/></svg>laurence.go</a>
-      <a href="https://www.linkedin.com/in/laurence-go"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#1a1a17" stroke-width="1.8"/><circle cx="7.4" cy="8" r="1.1" fill="#1a1a17"/><rect x="6.6" y="10" width="1.6" height="6" fill="#1a1a17"/><path d="M10.6 16v-6h1.6v.9c.4-.7 1.2-1 2-1 1.5 0 2.4.9 2.4 2.7V16h-1.6v-2.9c0-.8-.3-1.4-1.1-1.4s-1.1.6-1.1 1.4V16z" fill="#1a1a17"/></svg>laurence-go</a>
-      <a href="CV_LG.pdf"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.6" stroke="#1a1a17" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#1a1a17" stroke-width="1.6" stroke-linecap="round"/></svg>CV</a>
+      <a href="https://twitter.com/golaurencego" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 6.3c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2.1-.8.4-1.6.8-2.5 1a3.9 3.9 0 0 0-6.7 3.5A11 11 0 0 1 3.2 5.1a3.9 3.9 0 0 0 1.2 5.2c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.3 3.5 3.1 3.8-.6.2-1.2.2-1.8.1.5 1.6 2 2.7 3.7 2.7A7.8 7.8 0 0 1 2 18.1a11 11 0 0 0 6 1.8c7.2 0 11.1-6 11.1-11.1v-.5c.8-.6 1.4-1.3 1.9-2z" fill="#1a1a17"/></svg>@golaurencego</a>
+      <a href="https://bsky.app/profile/laurence.go" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 10.8C10.4 7.7 6.6 5.1 5 5.6c-1.4.5-.9 3.4-.4 5 .4 1.2 1.6 1.9 2.9 2-.9.2-1.9.5-1.6 1.9.3 1.3 2.5 2.6 4.1.9.8-.9 1-1.8 1-2.3 0 .5.2 1.4 1 2.3 1.6 1.7 3.8.4 4.1-.9.3-1.4-.7-1.7-1.6-1.9 1.3-.1 2.5-.8 2.9-2 .5-1.6 1-4.5-.4-5-1.6-.5-5.4 2.1-7 5.2z" fill="#1a1a17"/></svg>laurence.go</a>
+      <a href="https://www.linkedin.com/in/laurence-go" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#1a1a17" stroke-width="1.8"/><circle cx="7.4" cy="8" r="1.1" fill="#1a1a17"/><rect x="6.6" y="10" width="1.6" height="6" fill="#1a1a17"/><path d="M10.6 16v-6h1.6v.9c.4-.7 1.2-1 2-1 1.5 0 2.4.9 2.4 2.7V16h-1.6v-2.9c0-.8-.3-1.4-1.1-1.4s-1.1.6-1.1 1.4V16z" fill="#1a1a17"/></svg>laurence-go</a>
+      <a href="CV_LG.pdf" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.6" stroke="#1a1a17" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#1a1a17" stroke-width="1.6" stroke-linecap="round"/></svg>CV</a>
     </p>
   </section>
 
@@ -161,7 +162,7 @@
     <div class="grid-2">
       <article class="story">
         <span class="kicker"><span class="t-lab">Labor</span> <span class="sep">/</span> <span class="t-pol">Politics</span></span>
-        <h3><a href="https://academic.oup.com/jeea/advance-article/doi/10.1093/jeea/jvag014/8530555">Political Interdependence: Evidence from Migrant Turnout in 1,267 Elections Worldwide</a></h3>
+        <h3><a href="https://academic.oup.com/jeea/advance-article/doi/10.1093/jeea/jvag014/8530555" target="_blank" rel="noopener">Political Interdependence: Evidence from Migrant Turnout in 1,267 Elections Worldwide</a></h3>
         <p class="byline">Journal of the European Economic Association · Forthcoming</p>
         <p class="dek">Voting in your host country makes you vote back home.</p>
         <details class="abs"><summary><span class="plus"></span> Abstract</summary>
@@ -170,7 +171,7 @@
       </article>
       <article class="story">
         <span class="kicker"><span class="t-pol">Politics</span></span>
-        <h3><a href="https://doi.org/10.1016/j.jdeveco.2026.103754">Inattentive Citizens: Impact of Elections on Political Interest across 93 Countries</a></h3>
+        <h3><a href="https://doi.org/10.1016/j.jdeveco.2026.103754" target="_blank" rel="noopener">Inattentive Citizens: Impact of Elections on Political Interest across 93 Countries</a></h3>
         <p class="byline">Journal of Development Economics · 2026</p>
         <p class="dek">Elections spike political interest — then it fades within ten days.</p>
         <details class="abs"><summary><span class="plus"></span> Abstract</summary>
@@ -179,7 +180,7 @@
       </article>
       <article class="story">
         <span class="kicker"><span class="t-dev">Development</span> <span class="sep">/</span> <span class="t-pol">Politics</span></span>
-        <h3><a href="https://doi.org/10.1177/00104140211024292">When Running for Office Runs in the Family: Horizontal Dynasties, Policy and Development in the Philippines</a></h3>
+        <h3><a href="https://doi.org/10.1177/00104140211024292" target="_blank" rel="noopener">When Running for Office Runs in the Family: Horizontal Dynasties, Policy and Development in the Philippines</a></h3>
         <p class="byline">Comparative Political Studies · 2022</p>
         <p class="dek">When relatives split the offices, spending rises — but development doesn’t.</p>
         <details class="abs"><summary><span class="plus"></span> Abstract</summary>
@@ -188,7 +189,7 @@
       </article>
       <article class="story">
         <span class="kicker"><span class="t-pol">Politics</span> <span class="sep">/</span> <span class="t-dev">Development</span></span>
-        <h3><a href="https://doi.org/10.1016/j.jpubeco.2021.104455">First Among Equals: The First Place Effect and Political Promotion in Multi-Member Plurality Elections</a></h3>
+        <h3><a href="https://doi.org/10.1016/j.jpubeco.2021.104455" target="_blank" rel="noopener">First Among Equals: The First Place Effect and Political Promotion in Multi-Member Plurality Elections</a></h3>
         <p class="byline">Journal of Public Economics · 2021</p>
         <p class="dek">Coming first — not merely winning — makes politicians run again.</p>
         <details class="abs"><summary><span class="plus"></span> Abstract</summary>
@@ -258,10 +259,10 @@
     </div>
     <div class="flinks">
       <a href="mailto:laurence.go@bse.eu">Email</a>
-      <a href="https://twitter.com/golaurencego">Twitter</a>
-      <a href="https://bsky.app/profile/laurence.go">Bluesky</a>
-      <a href="https://www.linkedin.com/in/laurence-go">LinkedIn</a>
-      <a href="CV_LG.pdf">CV</a>
+      <a href="https://twitter.com/golaurencego" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://bsky.app/profile/laurence.go" target="_blank" rel="noopener">Bluesky</a>
+      <a href="https://www.linkedin.com/in/laurence-go" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="CV_LG.pdf" target="_blank" rel="noopener">CV</a>
     </div>
   </div>
 </footer>
