@@ -38,8 +38,8 @@
   /* masthead */
   .topline{border-top:1px solid var(--ink);}
   .masthead{text-align:center;padding:26px 0 16px;}
-  .nameplate{font-family:var(--display);font-weight:600;text-transform:uppercase;
-    font-size:clamp(30px,5.8vw,60px);line-height:1;letter-spacing:.3em;text-indent:.3em;margin:0;}
+  .nameplate{font-family:var(--display);font-weight:700;text-transform:uppercase;
+    font-size:clamp(32px,5.6vw,60px);line-height:1.05;letter-spacing:.42em;text-indent:.42em;margin:0;}
   .nav{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.1em;
     font-size:12px;text-align:center;padding:12px 0;border-top:1px solid var(--ink);border-bottom:3px solid var(--ink);}
   .nav a{color:var(--ink);padding:2px 4px;}
@@ -47,11 +47,11 @@
   .nav .sep{color:var(--muted);margin:0 5px;}
 
   /* hero — full page width */
-  .hero{padding:36px 0 40px;}
+  .hero{padding:36px 0 36px;}
   .hero-tag{font-family:var(--serif);font-size:clamp(23px,3.4vw,32px);line-height:1.24;
-    font-weight:500;margin:0 0 20px;letter-spacing:-.01em;}
+    font-weight:500;margin:0 0 20px;letter-spacing:-.01em;text-wrap:balance;}
   .hero-ico{width:52px;height:auto;vertical-align:middle;margin-left:6px;}
-  .bio{font-size:16px;line-height:1.6;margin:0;max-width:none;color:#33322d;}
+  .bio{font-size:16px;line-height:1.6;margin:0;max-width:none;color:#33322d;text-wrap:pretty;overflow-wrap:break-word;}
   .bio a{color:var(--ink);}
   .bio a:hover{background:var(--hl) no-repeat;background-size:100% .5em;background-position:0 90%;}
   .hero-contact{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.03em;margin-top:22px;
@@ -64,11 +64,11 @@
   .section{border-top:3px solid var(--ink);padding-top:18px;margin-top:30px;}
   /* Publications: shaded fill spans full page width, content stays aligned */
   .section.pub{border-top:0;background:var(--fill);box-shadow:0 0 0 100vw var(--fill);
-    clip-path:inset(0 -100vw);padding:30px 0;margin-top:30px;}
+    clip-path:inset(0 -100vw);padding:30px 0;margin-top:0;}
   .pub .section-head{border-top:3px solid var(--ink);padding-top:18px;}
   .section-head{margin:0 0 18px;}
   .section-head h2{display:flex;align-items:center;font-family:var(--serif);font-weight:600;
-    text-transform:uppercase;font-size:clamp(20px,2.8vw,26px);letter-spacing:.05em;margin:0;}
+    text-transform:uppercase;font-size:clamp(20px,2.8vw,26px);letter-spacing:.05em;margin:0;text-wrap:balance;}
   .ico{width:28px;height:28px;flex:none;margin-right:10px;}
 
   /* two-column sections (publications, working papers) — vertical dividers only */
@@ -78,6 +78,7 @@
   .grid-2 .story:nth-child(even){padding-left:36px;border-left:1px solid var(--rule);}
   .grid-2 .story:nth-child(1),.grid-2 .story:nth-child(2){padding-top:2px;}
   .pub .grid-2 .story:nth-child(even){border-left-color:#dcd7ca;}
+  .pub .grid-2 .story:nth-child(n+3){padding-bottom:0;}
 
   /* three-column section (works in progress) — vertical dividers only */
   .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;}
@@ -90,11 +91,11 @@
     font-size:10.5px;display:block;margin-bottom:8px;}
   .t-pol{color:var(--pol);} .t-dev{color:var(--dev);} .t-lab{color:var(--lab);}
   .kicker .sep{color:var(--muted);font-weight:600;}
-  .story h3{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.24;margin:0 0 6px;letter-spacing:-.005em;}
+  .story h3{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.24;margin:0 0 6px;letter-spacing:-.005em;text-wrap:balance;}
   .story h3 a:hover{background:var(--hl) no-repeat;background-size:100% .5em;background-position:0 84%;}
   .byline{font-family:var(--sans);font-weight:600;font-size:10.5px;color:var(--muted);
     letter-spacing:.05em;text-transform:uppercase;margin:0 0 10px;}
-  .dek{font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.4;color:var(--ink);margin:0;}
+  .dek{font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.4;color:var(--ink);margin:0;text-wrap:pretty;}
 
   .abs{margin:11px 0 0;}
   .abs summary{list-style:none;cursor:pointer;font-family:var(--sans);font-weight:700;font-size:10px;
@@ -105,7 +106,7 @@
   .abs[open] summary .plus{background:var(--ink);color:#fff;}
   .abs summary .plus::after{content:"+";}
   .abs[open] summary .plus::after{content:"–";}
-  .abs .body{font-size:13.5px;line-height:1.55;color:#34332e;margin:11px 0 0;max-width:70ch;}
+  .abs .body{font-size:13.5px;line-height:1.55;color:#34332e;margin:11px 0 0;text-wrap:pretty;overflow-wrap:break-word;}
 
   /* footer */
   .footer{background:var(--ink);color:#e9e7df;margin-top:34px;}
