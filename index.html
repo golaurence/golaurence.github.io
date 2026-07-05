@@ -1,18 +1,257 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Laurence Go</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laurence Go</title>
+<meta name="description" content="Laurence Anthony Go — economist. Political economy of elections, migration and development.">
+<!--
+  FONTS: serif = PLANTIN if available, else Times New Roman (Plantin's closest free relative), else Georgia.
+    To use REAL Plantin Std: if you have Adobe Fonts (Adobe CC), make a Web Project with "Plantin",
+    paste its <link> kit below, and the stack already prefers it — nothing else to change.
+    Labels use Montserrat (≈ Gotham).
+  EDIT: type over any text. ADD a paper = copy one <article class="story">…</article>.
+  Category colour = t-pol / t-dev / t-lab. Journal·year = <p class="byline">. One-liner = <p class="dek">.
+  Before leaving Wix: save cv.pdf in the repo and change the CV links to "cv.pdf".
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sans:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --serif:"Plantin Std","Plantin","Times New Roman",Times,Georgia,serif;
+    --display:"Plantin Std","Plantin","Times New Roman",Times,Georgia,serif;
+    --paper:#fdfcf9; --fill:#eeeae0; --ink:#1a1a17; --muted:#6f6d66; --rule:#e2e0d9;
+    --brand:#f4c400; --pol:#c0442e; --dev:#2f7d6b; --lab:#2d5b86;
+    --hl:linear-gradient(var(--brand),var(--brand)); --max:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--serif);font-size:17px;line-height:1.6;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 26px;}
+
+  a{color:var(--ink);text-decoration:none;}
+  .mark{background:var(--hl) no-repeat;background-size:100% .45em;background-position:0 84%;padding:0 .04em;}
+
+  /* masthead */
+  .topline{border-top:1px solid var(--ink);}
+  .masthead{text-align:center;padding:26px 0 16px;}
+  .nameplate{font-family:var(--display);font-weight:600;text-transform:uppercase;
+    font-size:clamp(40px,7.6vw,78px);line-height:1;letter-spacing:.16em;text-indent:.16em;margin:0;}
+  .nav{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.1em;
+    font-size:12px;text-align:center;padding:12px 0;border-top:1px solid var(--ink);border-bottom:3px solid var(--ink);}
+  .nav a{color:var(--ink);padding:2px 4px;}
+  .nav a:hover{background:var(--hl) no-repeat;background-size:100% .5em;background-position:0 82%;}
+  .nav .sep{color:var(--muted);margin:0 5px;}
+
+  /* hero (no portrait) */
+  .hero{padding:36px 0 40px;}
+  .hero-tag{font-family:var(--serif);font-size:clamp(23px,3.4vw,32px);line-height:1.24;
+    font-weight:500;margin:0 0 20px;letter-spacing:-.01em;}
+  .hero-ico{width:52px;height:auto;vertical-align:middle;margin-left:6px;}
+  .bio{font-size:16px;line-height:1.6;margin:0;max-width:64ch;color:#33322d;}
+  .bio a{color:var(--ink);}
+  .bio a:hover{background:var(--hl) no-repeat;background-size:100% .5em;background-position:0 90%;}
+  .hero-contact{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.03em;margin-top:22px;}
+  .hero-contact a{margin-right:18px;display:inline-flex;align-items:center;}
+  .hero-contact a:hover{background:var(--hl) no-repeat;background-size:100% .55em;background-position:0 82%;}
+  .cico{width:15px;height:15px;margin-right:6px;flex:none;}
+
+  /* sections — booktabs feel: toprule (section top) + midrule (under heading) */
+  .section{border-top:3px solid var(--ink);padding-top:18px;margin-top:34px;}
+  .section.pub{background:var(--fill);padding:18px 22px 26px;}
+  .section-head{margin:0 0 18px;padding-bottom:12px;border-bottom:1.6px solid var(--ink);}
+  .section-head h2{display:flex;align-items:center;font-family:var(--serif);font-weight:600;
+    font-size:clamp(22px,3vw,28px);letter-spacing:-.01em;margin:0;}
+  .ico{width:28px;height:28px;flex:none;margin-right:10px;}
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .grid-2 .story{padding:20px 0;}
+  .grid-2 .story:nth-child(odd){padding-right:36px;}
+  .grid-2 .story:nth-child(even){padding-left:36px;border-left:1px solid var(--rule);}
+  .grid-2 .story:nth-child(1),.grid-2 .story:nth-child(2){padding-top:2px;}
+  .grid-2 .story:nth-child(n+3){border-top:1px solid var(--rule);}
+  .pub .grid-2 .story:nth-child(even){border-left-color:#dcd7ca;}
+  .pub .grid-2 .story:nth-child(n+3){border-top-color:#dcd7ca;}
+
+  .kicker{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.13em;
+    font-size:10.5px;display:block;margin-bottom:8px;}
+  .t-pol{color:var(--pol);} .t-dev{color:var(--dev);} .t-lab{color:var(--lab);}
+  .kicker .sep{color:var(--muted);font-weight:600;}
+  .story h3{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.24;margin:0 0 6px;letter-spacing:-.005em;}
+  .story h3 a:hover{background:var(--hl) no-repeat;background-size:100% .5em;background-position:0 84%;}
+  .byline{font-family:var(--sans);font-weight:600;font-size:10.5px;color:var(--muted);
+    letter-spacing:.05em;text-transform:uppercase;margin:0 0 10px;}
+  .dek{font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.4;color:var(--ink);margin:0;}
+
+  .abs{margin:11px 0 0;}
+  .abs summary{list-style:none;cursor:pointer;font-family:var(--sans);font-weight:700;font-size:10px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:7px;user-select:none;}
+  .abs summary::-webkit-details-marker{display:none;}
+  .abs summary .plus{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;
+    background:var(--brand);color:var(--ink);font-size:13px;line-height:1;border-radius:2px;}
+  .abs[open] summary .plus{background:var(--ink);color:#fff;}
+  .abs summary .plus::after{content:"+";}
+  .abs[open] summary .plus::after{content:"–";}
+  .abs .body{font-size:13.5px;line-height:1.55;color:#34332e;margin:11px 0 0;}
+
+  /* footer */
+  .footer{background:var(--ink);color:#e9e7df;margin-top:34px;}
+  .footer .inner{max-width:var(--max);margin:0 auto;padding:32px 26px;display:flex;
+    justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .footer .fname{font-family:var(--display);font-size:24px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;}
+  .footer .ftag{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:#a9a79e;margin-top:6px;}
+  .footer a{color:var(--brand);} .footer a:hover{text-decoration:underline;}
+  .footer .flinks{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
+  .footer .flinks a{margin-left:18px;}
+
+  @media (max-width:900px){
+    .grid-2{grid-template-columns:1fr;}
+    .grid-2 .story{padding:22px 0 !important;border-left:0 !important;}
+    .grid-2 .story:nth-child(even){padding-left:0 !important;}
+    .grid-2 .story:not(:first-child){border-top:1px solid var(--rule);}
+    .nav{font-size:10.5px;}
+  }
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--pol);outline-offset:3px;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+</style>
 </head>
-
 <body>
+<div class="wrap topline">
 
-<!--img src="https://octodex.github.com/images/manufacturetocat.png" id="octocat" alt="octocat-gif"--/>
+  <!-- MASTHEAD -->
+  <header class="masthead"><h1 class="nameplate">Laurence Go</h1></header>
+  <nav class="nav">
+    <a href="#about">About</a><span class="sep">|</span>
+    <a href="#published">Publications</a><span class="sep">|</span>
+    <a href="#working">Working Papers</a><span class="sep">|</span>
+    <a href="#wip">Works in Progress</a><span class="sep">|</span>
+    <a href="https://www.laurencego.com/_files/ugd/96f991_9f4d04d8bb0d4526934b6687a7f3de65.pdf">CV</a>
+  </nav>
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<p>Hello! I’m Laurence.</p>
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <p class="hero-tag">I study <span class="mark">elections</span>, <span class="mark">migration</span> and <span class="mark">political behaviour</span> across the world
+      <svg class="hero-ico" viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="globe"><circle cx="26" cy="30" r="17" fill="#f4c400" stroke="#1a1a17" stroke-width="2"/><ellipse cx="26" cy="30" rx="17" ry="7" stroke="#1a1a17" stroke-width="1.5"/><path d="M26 13 C17 20 17 40 26 47" stroke="#1a1a17" stroke-width="1.5"/><path d="M26 13 C35 20 35 40 26 47" stroke="#1a1a17" stroke-width="1.5"/><circle cx="20" cy="24" r="2.4" fill="#c0442e" stroke="#1a1a17" stroke-width="0.8"/><circle cx="33" cy="35" r="2.4" fill="#2f7d6b" stroke="#1a1a17" stroke-width="0.8"/><path d="M45 15 C56 21 56 37 46 43" stroke="#2d5b86" stroke-width="2.3" stroke-linecap="round"/><path d="M46 43 L51.5 42 M46 43 L45.4 37.5" stroke="#2d5b86" stroke-width="2.3" stroke-linecap="round"/></svg></p>
+    <p class="bio">Postdoctoral researcher at the <a href="https://www.iae.csic.es/" target="_blank" rel="noopener">Institute for Economic Analysis (IAE-CSIC)</a> and the <a href="https://bse.eu/" target="_blank" rel="noopener">Barcelona School of Economics (BSE)</a> in Barcelona. PhD in Applied Economics from the Wharton School (University of Pennsylvania), MSc in Econometrics and Mathematical Economics from the London School of Economics, and a BS in Business Economics from the University of the Philippines. Previously a consultant at the World Bank.</p>
+    <p class="hero-contact">
+      <a href="mailto:laurence.go@bse.eu"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" stroke="#1a1a17" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="#1a1a17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>laurence.go@bse.eu</a>
+      <a href="https://twitter.com/golaurencego"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 6.3c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2.1-.8.4-1.6.8-2.5 1a3.9 3.9 0 0 0-6.7 3.5A11 11 0 0 1 3.2 5.1a3.9 3.9 0 0 0 1.2 5.2c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.3 3.5 3.1 3.8-.6.2-1.2.2-1.8.1.5 1.6 2 2.7 3.7 2.7A7.8 7.8 0 0 1 2 18.1a11 11 0 0 0 6 1.8c7.2 0 11.1-6 11.1-11.1v-.5c.8-.6 1.4-1.3 1.9-2z" fill="#1a1a17"/></svg>@golaurencego</a>
+      <a href="https://www.laurencego.com/_files/ugd/96f991_9f4d04d8bb0d4526934b6687a7f3de65.pdf"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.6" stroke="#1a1a17" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#1a1a17" stroke-width="1.6" stroke-linecap="round"/></svg>CV</a>
+    </p>
+  </section>
 
+  <!-- PUBLICATIONS (most recent → oldest) -->
+  <section class="section pub" id="published">
+    <div class="section-head"><h2><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4.5" y="20.5" width="23" height="4.6" rx="1" fill="#fdfcf9" stroke="#1a1a17" stroke-width="1.6"/><rect x="6.5" y="15.4" width="19" height="4.6" rx="1" fill="#c0442e" stroke="#1a1a17" stroke-width="1.6"/><rect x="4.5" y="10.3" width="23" height="4.6" rx="1" fill="#f4c400" stroke="#1a1a17" stroke-width="1.6"/></svg>Publications</h2></div>
+    <div class="grid-2">
+      <article class="story">
+        <span class="kicker"><span class="t-pol">Politics</span></span>
+        <h3><a href="https://doi.org/10.1016/j.jdeveco.2026.103754">Inattentive Citizens: Impact of Elections on Political Interest across 93 Countries</a></h3>
+        <p class="byline">Journal of Development Economics · 2026</p>
+        <p class="dek">Elections spike political interest — then it fades within ten days.</p>
+        <details class="abs"><summary><span class="plus"></span> Abstract</summary>
+          <p class="body">Using global survey data spanning 93 countries and over one million respondents, political interest rises by roughly 10% after an election, then dissipates within about ten days. The response is stronger when the first round is decisive, when an incumbent is defeated, and when economic policy uncertainty is high — consistent with citizens acquiring costly political information when returns are greatest.</p>
+        </details>
+      </article>
+      <article class="story">
+        <span class="kicker"><span class="t-dev">Development</span> <span class="sep">/</span> <span class="t-pol">Politics</span></span>
+        <h3><a href="https://doi.org/10.1177/00104140211024292">When Running for Office Runs in the Family: Horizontal Dynasties, Policy and Development in the Philippines</a></h3>
+        <p class="byline">Comparative Political Studies · 2022</p>
+        <p class="dek">When relatives split the offices, spending rises — but development doesn’t.</p>
+        <details class="abs"><summary><span class="plus"></span> Abstract</summary>
+          <p class="body">We examine horizontal dynasties — families simultaneously holding multiple different offices. Using a regression discontinuity design around close mayoral elections in the Philippines, mayors from horizontal dynasties spend more public resources, driven by weaker institutional checks when relatives occupy neighbouring offices. Despite higher spending, we find no improvements in economic growth or poverty reduction.</p>
+        </details>
+      </article>
+      <article class="story">
+        <span class="kicker"><span class="t-pol">Politics</span> <span class="sep">/</span> <span class="t-dev">Development</span></span>
+        <h3><a href="https://doi.org/10.1016/j.jpubeco.2021.104455">First Among Equals: The First Place Effect and Political Promotion in Multi-Member Plurality Elections</a></h3>
+        <p class="byline">Journal of Public Economics · 2021</p>
+        <p class="dek">Coming first — not merely winning — makes politicians run again.</p>
+        <details class="abs"><summary><span class="plus"></span> Abstract</summary>
+          <p class="body">We study rank-based decision-making in a multi-member plurality electoral system, comparing narrowly-ranked first- and second-placers among Philippine legislative councilors. First-placers are 5–9 percentage points more likely to run for higher office and 1–4 points more likely to win. The effect is specific to placing first and is not explained by party alignment, strategic voting, incumbency resources, or media exposure.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <!-- WORKING PAPERS -->
+  <section class="section" id="working">
+    <div class="section-head"><h2><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="7" y="5" width="14" height="20" rx="1.6" fill="#fdfcf9" stroke="#1a1a17" stroke-width="1.6"/><line x1="10" y1="10" x2="18" y2="10" stroke="#1a1a17" stroke-width="1.4" stroke-linecap="round"/><line x1="10" y1="13.5" x2="18" y2="13.5" stroke="#1a1a17" stroke-width="1.4" stroke-linecap="round"/><line x1="10" y1="17" x2="15" y2="17" stroke="#1a1a17" stroke-width="1.4" stroke-linecap="round"/><path d="M19.5 25.5 L25.5 19.5 L27.6 21.6 L21.6 27.6 Z" fill="#f4c400" stroke="#1a1a17" stroke-width="1.5" stroke-linejoin="round"/><path d="M19.5 25.5 L21.6 27.6 L18.4 28.6 Z" fill="#1a1a17"/></svg>Working Papers</h2></div>
+    <div class="grid-2">
+      <article class="story">
+        <span class="kicker"><span class="t-lab">Labor</span> <span class="sep">/</span> <span class="t-pol">Politics</span></span>
+        <h3><a href="https://academic.oup.com/jeea/advance-article/doi/10.1093/jeea/jvag014/8530555">Political Interdependence: Evidence from Migrant Turnout in 1,267 Elections Worldwide</a></h3>
+        <p class="byline">Accepted · J. European Economic Association</p>
+        <p class="dek">Voting in your host country makes you vote back home.</p>
+        <details class="abs"><summary><span class="plus"></span> Abstract</summary>
+          <p class="body">We document political interdependence driven by international migration. Assembling a novel dataset of migrant turnout in 1,267 elections across 43 origin and 217 destination countries, and using the quasi-random timing of elections between countries, migrant turnout in homeland elections held after a host-country election increases by 7 percentage points. This is consistent with a salience model: exposure to competitive host-country elections raises interest and drives migrants to participate in their homeland elections.</p>
+        </details>
+      </article>
+      <article class="story">
+        <span class="kicker"><span class="t-pol">Politics</span> <span class="sep">/</span> <span class="t-lab">Labor</span></span>
+        <h3>Absence Makes the Vote Grow Farther: Emigrant Voting Patterns Across 180 Homeland Elections</h3>
+        <p class="byline">Accepted · American Journal of Political Science</p>
+        <p class="dek">The greater the political distance, the more emigrants drift from home.</p>
+        <details class="abs"><summary><span class="plus"></span> Abstract</summary>
+          <p class="body">Do emigrants change their political preferences from afar? Drawing on a novel dataset of emigrant votes by country of residence across 180 homeland elections worldwide, we estimate pairwise fixed-effects regressions and show that political distance — the gap in Polity scores between origin and residence — systematically relates to divergence between the emigrant and homeland vote. The result is largely driven by migrants moving to more democratic countries.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <!-- WORKS IN PROGRESS -->
+  <section class="section" id="wip">
+    <div class="section-head"><h2><svg class="ico" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 5.5 L20 5.5 M13.5 5.5 L13.5 12.5 L8.6 23.8 Q8 26.6 10.8 26.6 L21.2 26.6 Q24 26.6 23.4 23.8 L18.5 12.5 L18.5 5.5" stroke="#1a1a17" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" fill="#fdfcf9"/><path d="M10.9 19.5 L21.1 19.5 L23.4 23.8 Q24 26.6 21.2 26.6 L10.8 26.6 Q8 26.6 8.6 23.8 Z" fill="#2f7d6b"/><circle cx="14" cy="23" r="1" fill="#fdfcf9"/><circle cx="17.5" cy="24.5" r="1.3" fill="#fdfcf9"/></svg>Works in Progress</h2></div>
+    <div class="grid-2">
+      <article class="story">
+        <span class="kicker"><span class="t-pol">Politics</span></span>
+        <h3>Pride and Prejudice: Impact of National Days on Patriotism and Attitudes Toward Immigrants</h3>
+        <p class="byline">Draft in preparation</p>
+        <p class="dek">National days cool nationalism where countries are ethnically divided.</p>
+        <details class="abs"><summary><span class="plus"></span> Abstract</summary>
+          <p class="body">What drives nationalism? Leveraging variation in the timing of national days relative to political survey dates, we find national days reduce nationalism in ethnically fragmented countries, and examine how this shapes public attitudes toward migration.</p>
+        </details>
+      </article>
+      <article class="story">
+        <span class="kicker"><span class="t-dev">Development</span> <span class="sep">/</span> <span class="t-pol">Politics</span></span>
+        <h3>Economic Nationalism and Industrial Development: Evidence from the 1975 Naturalization Law</h3>
+        <p class="byline">Draft in preparation</p>
+        <p class="dek">A 1975 law opening Philippine industry to foreigners, as a lens on economic nationalism.</p>
+        <details class="abs"><summary><span class="plus"></span> Abstract</summary>
+          <p class="body">As economic nationalism gains ground globally, its consequences remain unclear. We study a 1975 Philippine naturalization law that opened protected industries to foreign investors, showing how economic nationalism shapes industry growth, economic development, and market outcomes.</p>
+        </details>
+      </article>
+      <article class="story">
+        <span class="kicker"><span class="t-lab">Labor</span> <span class="sep">/</span> <span class="t-dev">Development</span></span>
+        <h3>Migrant Workers and Labor Market Institutions in Spain</h3>
+        <p class="byline">Draft in preparation</p>
+        <p class="dek">How Spain’s bargaining agreements shape migrant wages — and migration itself.</p>
+        <details class="abs"><summary><span class="plus"></span> Abstract</summary>
+          <p class="body">How do labor institutions shape the experiences of migrant workers? Using detailed administrative data, we study how collective bargaining agreements in Spain affect migrant workers’ wages, welfare, and migration decisions — and how labor protections influence migration patterns.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div>
+      <div class="fname">Laurence Go</div>
+      <div class="ftag">© <span id="year">2026</span></div>
+    </div>
+    <div class="flinks">
+      <a href="mailto:laurence.go@bse.eu">Email</a>
+      <a href="https://twitter.com/golaurencego">Twitter</a>
+      <a href="https://www.laurencego.com/_files/ugd/96f991_9f4d04d8bb0d4526934b6687a7f3de65.pdf">CV</a>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
