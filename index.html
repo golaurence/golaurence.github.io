@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laurence Go</title>
 <meta name="description" content="Laurence Anthony Go — economist. Political economy of elections, migration and development.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Laurence Go">
+<meta property="og:description" content="Economist — political economy of elections, migration and development.">
+<meta property="og:image" content="https://golaurence.github.io/og.png">
+<meta property="og:url" content="https://golaurence.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Laurence Go">
+<meta name="twitter:description" content="Economist — political economy of elections, migration and development.">
+<meta name="twitter:image" content="https://golaurence.github.io/og.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <!--
   FONTS: serif = real PLANTIN if the visitor has it installed (you do), else CRIMSON TEXT
     (free Google webfont, closest match to Plantin — loaded below), else Georgia/Times.
@@ -34,6 +46,11 @@
 
   a{color:var(--ink);text-decoration:none;}
   .mark{background:var(--hl) no-repeat;background-size:100% .45em;background-position:0 84%;padding:0 .04em;}
+  .hero-tag .mark{background-size:0% .45em;animation:sweep .55s cubic-bezier(.4,0,.2,1) forwards;}
+  .hero-tag .mark:nth-of-type(1){animation-delay:.25s;}
+  .hero-tag .mark:nth-of-type(2){animation-delay:.8s;}
+  .hero-tag .mark:nth-of-type(3){animation-delay:1.35s;}
+  @keyframes sweep{to{background-size:100% .45em;}}
 
   /* masthead */
   .topline{border-top:1px solid var(--ink);}
@@ -57,8 +74,8 @@
   .about-row{display:flex;align-items:center;gap:30px;}
   .about-row .bio{flex:1;}
   .about-photo{flex:none;width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:3px solid var(--fill);box-shadow:0 0 0 1px var(--rule);}
-  .hero-contact{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.03em;margin-top:22px;
-    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;}
+  .hero-contact{margin-top:22px;display:flex;flex-direction:column;gap:9px;}
+  .hero-contact .crow{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.03em;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;}
   .hero-contact a{display:inline-flex;align-items:center;}
   .hero-contact a:hover{background:var(--hl) no-repeat;background-size:100% .55em;background-position:0 82%;}
   .cico{width:15px;height:15px;margin-right:6px;flex:none;}
@@ -142,7 +159,7 @@
     .footer .flinks{font-size:11px;gap:14px;flex-wrap:nowrap;}
   }
   a:focus-visible,summary:focus-visible{outline:2px solid var(--pol);outline-offset:3px;}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.hero-tag .mark{animation:none;background-size:100% .45em;}}
 </style>
 </head>
 <body>
@@ -166,13 +183,19 @@
       <p class="bio">Postdoctoral researcher at the <a href="https://www.iae.csic.es/" target="_blank" rel="noopener">Institute for Economic Analysis (IAE-CSIC)</a> and the <a href="https://bse.eu/" target="_blank" rel="noopener">Barcelona School of Economics (BSE)</a> in Barcelona. PhD in Applied Economics from the Wharton School (University of Pennsylvania), MSc in Econometrics and Mathematical Economics from the London School of Economics, and a BS in Business Economics from the University of the Philippines. Previously a consultant at the World Bank.</p>
       <img class="about-photo" src="photo.jpg" alt="Laurence Go" loading="eager">
     </div>
-    <p class="hero-contact">
-      <a href="mailto:laurence.go@bse.eu"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" stroke="#1a1a17" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="#1a1a17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>laurence.go@bse.eu</a>
-      <a href="https://twitter.com/golaurencego" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 6.3c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2.1-.8.4-1.6.8-2.5 1a3.9 3.9 0 0 0-6.7 3.5A11 11 0 0 1 3.2 5.1a3.9 3.9 0 0 0 1.2 5.2c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.3 3.5 3.1 3.8-.6.2-1.2.2-1.8.1.5 1.6 2 2.7 3.7 2.7A7.8 7.8 0 0 1 2 18.1a11 11 0 0 0 6 1.8c7.2 0 11.1-6 11.1-11.1v-.5c.8-.6 1.4-1.3 1.9-2z" fill="#1a1a17"/></svg>golaurencego</a>
-      <a href="https://bsky.app/profile/laurence.go" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 10.8C10.4 7.7 6.6 5.1 5 5.6c-1.4.5-.9 3.4-.4 5 .4 1.2 1.6 1.9 2.9 2-.9.2-1.9.5-1.6 1.9.3 1.3 2.5 2.6 4.1.9.8-.9 1-1.8 1-2.3 0 .5.2 1.4 1 2.3 1.6 1.7 3.8.4 4.1-.9.3-1.4-.7-1.7-1.6-1.9 1.3-.1 2.5-.8 2.9-2 .5-1.6 1-4.5-.4-5-1.6-.5-5.4 2.1-7 5.2z" fill="#1a1a17"/></svg>laurence.go</a>
-      <a href="https://www.linkedin.com/in/laurence-go" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#1a1a17" stroke-width="1.8"/><circle cx="7.4" cy="8" r="1.1" fill="#1a1a17"/><rect x="6.6" y="10" width="1.6" height="6" fill="#1a1a17"/><path d="M10.6 16v-6h1.6v.9c.4-.7 1.2-1 2-1 1.5 0 2.4.9 2.4 2.7V16h-1.6v-2.9c0-.8-.3-1.4-1.1-1.4s-1.1.6-1.1 1.4V16z" fill="#1a1a17"/></svg>laurence-go</a>
-      <a href="CV_LG.pdf" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.6" stroke="#1a1a17" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#1a1a17" stroke-width="1.6" stroke-linecap="round"/></svg>CV</a>
-    </p>
+    <div class="hero-contact">
+      <span class="crow">
+        <a href="mailto:laurence.go@bse.eu"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2" stroke="#1a1a17" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="#1a1a17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>laurence.go@bse.eu</a>
+        <a href="https://scholar.google.com/citations?user=rVb23iAAAAAJ" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 5 L22 9.5 L12 14 L2 9.5 Z" stroke="#1a1a17" stroke-width="1.7" stroke-linejoin="round"/><path d="M6.5 11.3 V15.5 Q6.5 18 12 18 Q17.5 18 17.5 15.5 V11.3" stroke="#1a1a17" stroke-width="1.6" stroke-linejoin="round"/><path d="M22 9.7 V15" stroke="#1a1a17" stroke-width="1.4" stroke-linecap="round"/></svg>Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-6162-7048" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#1a1a17" stroke-width="1.8"/><circle cx="8.6" cy="7.9" r="1.05" fill="#1a1a17"/><rect x="7.85" y="9.7" width="1.5" height="7.4" fill="#1a1a17"/><path d="M11.7 9.9 h2.2 a3.6 3.6 0 0 1 0 7.2 h-2.2 z" stroke="#1a1a17" stroke-width="1.5" stroke-linejoin="round"/></svg>ORCID</a>
+        <a href="CV_LG.pdf" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.6" stroke="#1a1a17" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#1a1a17" stroke-width="1.6" stroke-linecap="round"/></svg>CV</a>
+      </span>
+      <span class="crow">
+        <a href="https://twitter.com/golaurencego" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 6.3c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2.1-.8.4-1.6.8-2.5 1a3.9 3.9 0 0 0-6.7 3.5A11 11 0 0 1 3.2 5.1a3.9 3.9 0 0 0 1.2 5.2c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.3 3.5 3.1 3.8-.6.2-1.2.2-1.8.1.5 1.6 2 2.7 3.7 2.7A7.8 7.8 0 0 1 2 18.1a11 11 0 0 0 6 1.8c7.2 0 11.1-6 11.1-11.1v-.5c.8-.6 1.4-1.3 1.9-2z" fill="#1a1a17"/></svg>golaurencego</a>
+        <a href="https://bsky.app/profile/laurence.go" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 10.8C10.4 7.7 6.6 5.1 5 5.6c-1.4.5-.9 3.4-.4 5 .4 1.2 1.6 1.9 2.9 2-.9.2-1.9.5-1.6 1.9.3 1.3 2.5 2.6 4.1.9.8-.9 1-1.8 1-2.3 0 .5.2 1.4 1 2.3 1.6 1.7 3.8.4 4.1-.9.3-1.4-.7-1.7-1.6-1.9 1.3-.1 2.5-.8 2.9-2 .5-1.6 1-4.5-.4-5-1.6-.5-5.4 2.1-7 5.2z" fill="#1a1a17"/></svg>laurence.go</a>
+        <a href="https://www.linkedin.com/in/laurence-go" target="_blank" rel="noopener"><svg class="cico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#1a1a17" stroke-width="1.8"/><circle cx="7.4" cy="8" r="1.1" fill="#1a1a17"/><rect x="6.6" y="10" width="1.6" height="6" fill="#1a1a17"/><path d="M10.6 16v-6h1.6v.9c.4-.7 1.2-1 2-1 1.5 0 2.4.9 2.4 2.7V16h-1.6v-2.9c0-.8-.3-1.4-1.1-1.4s-1.1.6-1.1 1.4V16z" fill="#1a1a17"/></svg>laurence-go</a>
+      </span>
+    </div>
   </section>
 
   <!-- PUBLICATIONS (1 column, newest first) -->
